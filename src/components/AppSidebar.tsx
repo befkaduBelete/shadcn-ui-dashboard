@@ -10,6 +10,7 @@ import {
   Plus,
   Projector,
   ChevronDown,
+  PlusCircleIcon,
 } from "lucide-react";
 import {
   Sidebar,
@@ -23,7 +24,9 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
   SidebarMenuSubButton,
+  SidebarMenuSubItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
@@ -84,10 +87,10 @@ export default function AppSidebar() {
           </SidebarMenuButton>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarSeparator className="px-2" />
+      <SidebarSeparator className="mx-0" />
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel> ABCD</SidebarGroupLabel>
+          <SidebarGroupLabel> MENU</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -116,9 +119,15 @@ export default function AppSidebar() {
                   <Projector /> See All Project
                 </Link>
               </SidebarMenuButton>
+              <SidebarMenuButton asChild>
+                <Link href={"/"}>
+                  <PlusCircleIcon /> Add New
+                </Link>
+              </SidebarMenuButton>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        {/* COLLAPSIBLE MENU */}
         <Collapsible defaultOpen className="group/collapsible">
           <SidebarGroup>
             <SidebarGroupLabel asChild>
@@ -146,8 +155,39 @@ export default function AppSidebar() {
             </CollapsibleContent>
           </SidebarGroup>
         </Collapsible>
-      </SidebarContent>
 
+        {/* NESTED MENU */}
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add Project</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuButton asChild>
+                <Link href={"/"}>
+                  <Projector /> See All Project
+                </Link>
+              </SidebarMenuButton>
+              <SidebarMenuSub>
+                <SidebarMenuSubItem>
+                  <SidebarMenuSubButton asChild>
+                    <Link href={"/"}>
+                      <Plus /> ADD
+                    </Link>
+                  </SidebarMenuSubButton>
+                </SidebarMenuSubItem>
+              </SidebarMenuSub>
+              <SidebarMenuButton asChild>
+                <Link href={"/"}>
+                  <PlusCircleIcon /> Add New
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>

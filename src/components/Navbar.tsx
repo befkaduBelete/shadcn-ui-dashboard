@@ -1,5 +1,5 @@
 "use client";
-import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
+import {  LogOut, Moon, Settings, Sun, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -14,7 +14,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import { SidebarTrigger, useSidebar } from "./ui/sidebar";
+import {  useSidebar } from "./ui/sidebar";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
@@ -41,10 +41,10 @@ const Navbar = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme("light")}>
-              Light
+                <Sun/>   Light
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme("dark")}>
-              Dark
+               <Moon/> Dark
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme("system")}>
               System
