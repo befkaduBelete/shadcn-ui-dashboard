@@ -74,7 +74,7 @@ const items = [
 
 export default function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" side="left">
+    <Sidebar collapsible="icon" side="left" className="">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuButton asChild>

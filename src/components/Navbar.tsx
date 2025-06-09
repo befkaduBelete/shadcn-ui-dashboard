@@ -1,5 +1,5 @@
 "use client";
-import {  LogOut, Moon, Settings, Sun, User } from "lucide-react";
+import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -14,7 +14,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import {  useSidebar } from "./ui/sidebar";
+import { useSidebar } from "./ui/sidebar";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
@@ -24,8 +24,7 @@ const Navbar = () => {
       {/* LEFT */}
       {/* <SidebarTrigger/> */}
       <Button variant={"outline"} onClick={toggleSidebar}>
-        {" "}
-        Custom Button{" "}
+        CB
       </Button>
       {/* RIGHT */}
       <div className="flex items-center gap-4">
@@ -41,10 +40,10 @@ const Navbar = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setTheme("light")}>
-                <Sun/>   Light
+              <Sun /> Light
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme("dark")}>
-               <Moon/> Dark
+              <Moon /> Dark
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme("system")}>
               System
@@ -64,11 +63,10 @@ const Navbar = () => {
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              {" "}
               <User className="h-[1.2rem] w-[1.2rem] mr-2" /> Profile
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Settings className="h-[1.2rem] w-[1.2rem] mr-2" /> Setting{" "}
+              <Settings className="h-[1.2rem] w-[1.2rem] mr-2" /> Setting
             </DropdownMenuItem>
             <DropdownMenuItem variant={"destructive"}>
               <LogOut className="h-[1.2rem] w-[1.2rem] mr-2" /> Logout
